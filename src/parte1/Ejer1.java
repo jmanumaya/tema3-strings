@@ -6,7 +6,7 @@ public class Ejer1 {
 
 	public static void main(String[] args) {
 		
-		// Creo el escaner.
+		// Creo el escaner
 		Scanner sc = new Scanner(System.in);
 		
 		// String que contedrá la primera frase
