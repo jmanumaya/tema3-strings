@@ -24,6 +24,7 @@ public class Ejer2 {
 		System.err.println(" -Segundo, el otro jugador deberá introducir palabras hasta adivinarla");
 		System.err.println(" -Observación: Al introducir una palabra se indicará si está antes o despúes"
 				+ " alfabeticamente la contraseña a adivinar.");
+		System.out.println();
 		
 		// Leo la contraseña por parte del primer jugador
 		System.out.println("Dime la contraseña:");

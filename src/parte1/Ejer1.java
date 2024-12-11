@@ -15,8 +15,11 @@ public class Ejer1 {
 		// String que contedrá la segunda frase
 		String frase2 = "";
 		
-		// Variable que contendrá la respuesta de la comparacion de cadenas
-		int respuesta;
+		// Variable que contendrá la longitud de la primera frase.
+		int long1;
+		
+		// Variable que contendrá la longitud de la segunda frase.
+		int long2;
 		
 		// Leo la primera frase
 		System.out.println("Dime una frase:");
@@ -31,17 +34,14 @@ public class Ejer1 {
 		System.err.println(frase1);
 		System.err.println(frase2);
 		
-		// Guardo en respuesta lo que me de al comparar la frase1 con la 2.
-		// Si me da un negativo significa que la primera frase es menor que la segunda.
-		// Si me da un positivo significa que la primera frase es mayor que la segunda.
-		// Si me da un 0 significa que son las dos frases iguales.
-		respuesta  = frase1.compareToIgnoreCase(frase2);
+		// Guardo en su respectiva variable la longitud de cada frase
+		long1 = frase1.length();
+		long2 = frase2.length();
 		
-		// Compruebo con if si la respuesta es negativa, 0 o positiva-
-		// para imprimir el resultado que corresponda.
-		if (respuesta == 0) {
+		// Comparo las longitudes y segun el caso imprimo una respuesta u otra
+		if (long1 == long2) {
 			System.out.println("Las frases son de igual tamaño.");
-		} else if (respuesta > 0) {
+		} else if (long1 > long2) {
 			System.out.println("La primera frase es de mayor tamaño");
 		} else {
 			System.out.println("La segunda frase es de mayor tamaño");
