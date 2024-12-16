@@ -35,6 +35,8 @@ public class Ejer9 {
 
 	// Función que verifica si la frase está en el idioma de Javalandia y devuelve la frase traducida (o no).
 	private static String traducirJavalandia(String frase) {
+		
+		// Variable que almacenara el mensaje a devolver traducido.
 		String mensaje = "";
 		
 		// Verifico si la frase empieza con "Javalín, javalón".
