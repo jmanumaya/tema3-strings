@@ -34,7 +34,7 @@ public class Exer1 {
 		// Variable for the new message
 		String newMesagge = "";
 
-		// Variable to store the charAt
+		// Variable to store the charAt.
 		char pos;
 
 		// For to run all the charAt
