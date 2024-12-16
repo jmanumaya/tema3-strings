@@ -31,7 +31,7 @@ public class Exer1 {
 
 	private static String translate(String originalMesagge) {
 
-		// Variable for the new message
+		// Variable for the new message.
 		String newMesagge = "";
 
 		// Variable to store the charAt.
