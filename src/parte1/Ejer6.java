@@ -5,65 +5,62 @@ import java.util.Scanner;
 public class Ejer6 {
 	
 	public static void main(String[] args) {
-		
 		// Creo el escaner
 		Scanner sc = new Scanner(System.in);
 		
-		// Variable donde voy a guardar la frase
+		// Declaro una variable para almacenar la frase ingresada por el usuario.
 		String frase = "";
 		
+		// Variable booleana donde guardaré el resultado de la comprobación.
 		Boolean res;
 		
-		// Pido la frase al user
+		// Solicito al usuario que introduzca una frase.
 		System.out.println("Dime una frase y te diré si es palíndroma: ");
 		frase = sc.nextLine();
 		
+		// Llamo a la función esPalindroma para verificar si la frase lo es.
 		res = esPalindroma(frase);
 		
-		if (res == true) {
-			System.out.println("Es palindroma");
+		// Compruebo el resultado y muestro el mensaje correspondiente.
+		if (res) {
+			System.out.println("Es palíndroma");
 		} else {
-			System.out.println("No es palindroma");
+			System.out.println("No es palíndroma");
 		}
 		
+		// Cierro el escaner.
+		sc.close();
 	}
 
+	// Función que verifica si una frase es palíndroma
 	private static Boolean esPalindroma(String frase) {
 		
-		Boolean res;
+		// Quito los espacios de la frase para hacer la comparación correctamente
+		String fraseSinEspacios = frase.replace(" ", "").toLowerCase();
 		
-		String fraseSinEspacios = frase.replace(" ", "");
+		// Obtengo la frase invertida llamando a la función darVuelta
 		String fraseVuelta = darVuelta(fraseSinEspacios);
 		
-		res = frase.equals(fraseVuelta);
-		
-		return res;
+		// Comparo la frase original (sin espacios) con su versión invertida
+		return fraseSinEspacios.equals(fraseVuelta);
 	}
 	
-	// Función que le va a dar la vuelta a la frase
+	// Función que invierte una frase
 	private static String darVuelta(String frase) {
 		
-		// Tabla que va a contener cada letra de la frase
-		char fraseLetras[];
+		// Convierto la frase en un array de caracteres
+		char fraseLetras[] = frase.toCharArray();
 		
-		// Doy valor a la tabla con las letras de la frase
-		fraseLetras = frase.toCharArray();
-		
-		// Inicializo la frase
+		// Inicializo una variable para construir la frase invertida
 		String newFrase = "";
 		
-		// Cojo la longitud máxima de la frase
-		int max = fraseLetras.length;
-		--max;
-		
-		// Recorro la tabla con i y le voy asignando cada caracter a la nueva frase-
-		// desde el ultimo al primero.
-		for (int i = max; i >= 0; i--) {
+		// Recorro el array desde el último carácter hasta el primero
+		for (int i = fraseLetras.length - 1; i >= 0; i--) {
+			// Añado cada carácter al resultado
 			newFrase += fraseLetras[i];
 		}
 		
-		// Devuelvo la nueva frase dada la vuelta
+		// Devuelvo la frase invertida
 		return newFrase;
 	}
-
 }
