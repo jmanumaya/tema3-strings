@@ -44,8 +44,8 @@ public class Ejer9 {
 				// Elimino la muletilla inicial y los espacios o tabulaciones que le siguen.
 				mensaje = frase.substring(16).trim();
 			}
+		// Verifico si la frase termina con "javalén, len, len".
 		} else if (frase.endsWith("javalén, len, len")) {
-			// Verifico si la frase termina con "javalén, len, len".
 			// Elimino la muletilla final y los espacios o tabulaciones que le siguen.
 			mensaje = frase.substring(0, frase.length() - 17).trim();
 		}
