@@ -40,34 +40,30 @@ public static void main(String[] args) {
 	}
 
 	// Función que va a decodificar cada caracter de la palabra o frase que le asignemos.
-	private static String decodificar(char[] conjunto1, char[] conjunto2, char c) {
+	private static char decodificar(char[] conjunto1, char[] conjunto2, char c) {
 		
-		// Caracter decodificado.
-		char caracterDecodificado = ' ';
-		
-		// Asigno el caracter decodificado a una cadena para poder devolverlo
-		String decodificadoReturn = "";
+		// Caracter decodificado o no.
+		char caracterDecodificado = c;
 		
 		// Variable que va a hacer las veces de contador.
 		int cont = 0;
 		
+		// Variable que va a hacer las veces de salida directa.
+		boolean encontrado = false;
+		
 		// While para buscar el caracter en el cojunto y decodificarlo si procede (salimos cuando lo haga).
-		while (cont < conjunto2.length) {
+		while (cont < conjunto2.length && !encontrado) {
 			
 			if (c == conjunto2[cont]) {
 				caracterDecodificado = conjunto1[cont];
-				cont = conjunto2.length;
-			} else {
-				caracterDecodificado = c;
-				++cont;
+				encontrado = true;
 			}
+			
+			++cont;
 		}
 		
-		// Le asigno el caracter al string
-		decodificadoReturn += caracterDecodificado;
-		
 		// Devuelvo el caracter.
-		return decodificadoReturn;
+		return caracterDecodificado;
 	}
 
 }

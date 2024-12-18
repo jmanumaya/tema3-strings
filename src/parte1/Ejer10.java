@@ -40,34 +40,30 @@ public class Ejer10 {
 	}
 
 	// Función que va a codificar cada caracter de la palabra o frase que le asignemos.
-	private static String codificar(char[] conjunto1, char[] conjunto2, char c) {
+	private static char codificar(char[] conjunto1, char[] conjunto2, char c) {
 		
-		// Caracter Codificado.
-		char caracterCodificado = ' ';
-		
-		// Asigno el caracter codificado a una cadena para poder devolverlo
-		String codificadoReturn = "";
+		// Caracter Codificado o no.
+		char caracterCodificado = c;
 		
 		// Variable que va a hacer las veces de contador.
 		int cont = 0;
 		
+		// Variable que va a hacer las veces de salida directa.
+		boolean encontrado = false;
+		
 		// While para buscar el caracter en el cojunto y codificarlo si procede (salimos cuando lo haga).
-		while (cont < conjunto1.length) {
+		while (cont < conjunto1.length && !encontrado) {
 			
 			if (c == conjunto1[cont]) {
 				caracterCodificado = conjunto2[cont];
-				cont = conjunto1.length;
-			} else {
-				caracterCodificado = c;
-				++cont;
+				encontrado = true;
 			}
+			
+			++cont;
 		}
 		
-		// Le asigno el caracter al string
-		codificadoReturn += caracterCodificado;
-		
 		// Devuelvo el caracter.
-		return codificadoReturn;
+		return caracterCodificado;
 	}
 
 }
