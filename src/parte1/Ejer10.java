@@ -18,7 +18,7 @@ public class Ejer10 {
 		// Variable donde almacenaré la palabra o frase codificada
 		String codificada = "";
 		
-		// Conjunto 1 para codificar.
+		// Conjuntos para codificar.
 		char[] conjunto1 = {'e','i','k','m','p','q','r','s','t','u','v'};
 		char[] conjunto2 = {'p','v','i','u','m','t','e','r','k','q','s'};
 		
