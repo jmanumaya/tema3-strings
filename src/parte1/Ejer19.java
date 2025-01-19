@@ -3,65 +3,66 @@ package parte1;
 import java.util.Scanner;
 
 public class Ejer19 {
-
+		
 	public static void main(String[] args) {
-
-		// Creo el scanner
+		
+		// Creo el escaner
 		Scanner sc = new Scanner(System.in);
 		
-		// Variable que contendra la frase.
-		String frase;
+		// Variable que va a almacenar la frase dada por el usuario
+		String frase = "";
 		
-		// Variable que va a almacenar el caracter que toque en cada caso.
-		String c;
+		// Variable que va a almacenar lo que me devuelva la funcion de convertir a camelCase.
+		String camelCase = "";
 		
-		// tabla de char para la frase.
-		char[] letras;
+		// Pido al usuario la frase.
+		System.out.println("Dime la frase a convertir a camelCase: ");
+		frase = sc.nextLine();
 		
-		// Variable que va a ser las veces de i en un for pero ahora en el while.
-		int i = 0;
+		// Llamo a la funcion convertirACamelCase y le asigno lo que me devuelve a la variable camelCase.
+		camelCase = convertirACamelCase(frase);
 		
-		// posicion1
-		int pos1;
+		// Imprimo el resultado generado.
+		System.out.println("Resultado: " + camelCase);
 		
-		// posicion2
-		int pos2;
-		
-		// contador.
-		int cont = 0;
+		// Cierro uso de escaner.
+		sc.close();
+	}
 
-		// Leo la frase.
-		System.out.println("Frase: ");
-		frase = sc.nextLine().toLowerCase();
+	// funcion que combierte una frase al nombre de una variable en camelCase.
+	public static String convertirACamelCase(String frase) {
 		
-		// Bucle para recorrer todo el array en busca de cada letra y su correspondiente numero de repeticiones.
-		while (i < frase.length()) {
+		// Divido la frase en palabras y las almaceno en el Array.
+		String[] palabras = frase.split(" ");
+		
+		// Variable que va a contener la frase convertida en nombre de variable en formato camelcase y la que se delvuelve de la función.
+		String resultado = "";
+
+		for (int i = 0; i < palabras.length; i++) {
 			
-			// Busco en la frase dicha letra de dicha posicion del array y le doy el valor de donde esté a pos1.
-			pos1 = frase.indexOf(" ");
-			
-			// Bucle para que mientras lo encuentre vaya buscandolo de nuevo y vaya contabilizando las veces que encuentra dicha letra en la frase.
-			while (pos1 != -1) {
-				
-				pos1 = pos1 + 1;
-				
-				c = frase.charAt(pos1);
-				
-				
-				
-			}
-			
-			// Voy imprimiendo el resultado según vaya procediendo con cada letra que se ha ido buscando su repeticiones.
-			System.out.println(cont > 1 ? c + ": " + cont + " veces" : c + ": " + cont + " vez");
-			
-			// Reseteo valores y doy a i la siguiente posición en la que buscar obviando a las letras ya buscadas porque en el array estaran por ejemplo 4 a juntas
-			// entonces sumo las veces que se cuenta dicha letra para empezar ya con la siguiente. si tengo 4 a: aaaa pues empiezo ya con la b por ejemplo: aaaab.
-			pos1 = 0;
-			pos2 = 0;
-			i = i + cont;
-			cont = 0;
+			// Tomo la palabra actual del array en la posición i.
+			String palabra = palabras[i];
+		    
+		    if (i == 0) {
+		        // Si es la primera palabra (posición 0), la convierto completamente en minúsculas,
+		        // ya que en CamelCase la primera palabra no empieza con mayúscula.
+		        resultado += palabra.toLowerCase();
+		    } else {
+		        // Si no es la primera palabra, aplico las reglas de CamelCase:
+		        
+		        // La primera letra de la palabra la convierto en mayúscula.
+		        String primeraLetra = Character.toUpperCase(palabra.charAt(0)) + "";
+		        
+		        // El resto de la palabra (a partir del segundo carácter) lo convierto en minúsculas.
+		        String resto = palabra.substring(1).toLowerCase();
+		        
+		        // Junto la primera letra mayúscula con el resto en minuscula y lo añado al resultado.
+		        resultado += primeraLetra + resto;
+		    }
 		}
-		
+
+		// Devuelvo el resultado ya formado.
+		return resultado;
 	}
 
 }
